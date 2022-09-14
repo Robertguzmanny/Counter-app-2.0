@@ -1,7 +1,9 @@
 package com.example.darft;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected static final String END_RESULT = "End Result";
     protected static final String WINNING_TEAM = "Who Won";
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
 
         Log.d(TAG, "inside onSaveInstanceState");
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "end of onStart");
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onResume() {
         super.onResume();
@@ -100,12 +104,14 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "end of onDestroy");
     }
 
+    @SuppressLint("SetTextI18n")
     public void countUp(android.view.View view) {
         myCounter++;
         gameCount.setText(""+ myCounter);
         nextActivity();
     }
 
+    @SuppressLint("SetTextI18n")
     public void eCountUp(android.view.View view) {
         theirCounter++;
         otherCount.setText(""+ theirCounter);
@@ -115,17 +121,27 @@ public class MainActivity extends AppCompatActivity {
     public void nextActivity() {
         Intent intent = new Intent(this, SecondActivity.class);
         int result;
+        Log.d(TAG, "inside nextActivity");
         if(myCounter == 5){
             result = myCounter - theirCounter;
+
+            Log.d(TAG, "result is "+ result);
             intent.putExtra(END_RESULT, result);
-            intent.putExtra(WINNING_TEAM, "Your Team Won By:");
+            intent.putExtra(WINNING_TEAM, " Team A Won By:" + result);
             startActivity(intent);
+
+            Log.d(TAG, "called startActivity");
         }
         else if(theirCounter == 5) {
             result = theirCounter - myCounter;
+
+            Log.d(TAG, "result is " + result);
+
             intent.putExtra(END_RESULT, result);
-            intent.putExtra(WINNING_TEAM, "Your Team Lost By:");
+            intent.putExtra(WINNING_TEAM, " Team A Lost By:" + result);
             startActivity(intent);
+
+            Log.d(TAG, "called startActivity");
         }
     }
 
