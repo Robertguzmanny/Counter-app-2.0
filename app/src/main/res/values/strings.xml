@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Count Up</string>
+    <string name="_0">0</string>
+    <string name="_00">0</string>
+    <string name="countup">countUp</string>
+    <string name="enemycountup">enemyCountUp</string>
+    <string name="your_team_won_by">Your team won by:</string>
+</resources>
