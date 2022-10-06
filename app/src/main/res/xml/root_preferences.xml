@@ -1,0 +1,45 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <EditTextPreference
+        app:key="preferred_contact"
+        app:title="Preferred Contact"
+        app:useSimpleSummaryProvider="true" />
+
+
+
+
+    <ListPreference
+        app:entries="@array/backg_entries"
+        app:entryValues="@array/backg_values"
+        app:key="winner_display"
+        app:title="Winner Display"
+        app:useSimpleSummaryProvider="true" />
+
+
+    <EditTextPreference
+        app:key="fav_team"
+        app:title="Favorite Sports Team"
+        app:useSimpleSummaryProvider="true" />
+
+
+
+
+    <ListPreference
+        app:entries="@array/activity_entries"
+        app:entryValues="@array/activity_values"
+        app:key="Sport_choose"
+        app:title="Current Sport"
+        app:useSimpleSummaryProvider="true" />
+
+
+
+
+
+
+
+
+
+
+</PreferenceScreen>

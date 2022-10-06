@@ -5,4 +5,45 @@
     <string name="countup">countUp</string>
     <string name="enemycountup">enemyCountUp</string>
     <string name="your_team_won_by">Your team won by:</string>
+    <string name="call">call</string>
+    <string name="send_msg">send msg</string>
+    <string name="locations">locations</string>
+    <string name="enter_location_here">Enter location here</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="sportsArray">
+        <item>Baseball</item>
+        <item>Football</item>
+        <item>Basketball</item>
+    </string-array>
+
+    <string-array name="winnerImage">
+        <item>Thumbs Up</item>
+        <item>Trophy</item>
+        <item>Medal</item>
+    </string-array>
+
+    <array name="winner_values">
+        <item>@drawable/tups</item>
+        <item>@drawable/nbaring</item>
+        <item>@drawable/trophyone</item>
+    </array>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <string name="action_settings">Settings</string>
 </resources>
