@@ -13,10 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
+        android:onClick="countUp"
         android:text="@string/countup"
         android:textAlignment="center"
-        android:textSize="16sp"
-        android:onClick="countUp"/>
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/show_count"

@@ -5,4 +5,8 @@
     <string name="countup">countUp</string>
     <string name="enemycountup">enemyCountUp</string>
     <string name="your_team_won_by">Your team won by:</string>
+    <string name="call">call</string>
+    <string name="send_msg">send msg</string>
+    <string name="locations">locations</string>
+    <string name="enter_location_here">Enter location here</string>
 </resources>
