@@ -30,10 +30,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
     private EditText editTextLoc;
     public static final int REQUEST_CALL_PHONE = 1;
     private SharedPreferences preferences;
-    private ConstraintLayout winnerLayout;
     private View winnerBackground;
-
-
 
 
 
@@ -52,6 +49,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         tv_display.setText(winningTeam);
         tv_display.append(" ");
         setBackG();
+
 
         getReferencetoWidgets();
         setOnClickListenersForButtons();
@@ -100,6 +98,10 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
                 Log.d(TAG,"Location button clicked");
                 findLocations();
                 break;
+            case R.id.button4:
+                callUser();
+                break;
+
 
         }
 
@@ -253,12 +255,30 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         switch(image){
             case "Ring": winnerBackground.setBackgroundResource(R.drawable.nbaring);
                 break;
-            case "Thumbs up": winnerBackground.setBackgroundResource(R.drawable.tups);
+            case "Thumbs Up": winnerBackground.setBackgroundResource(R.drawable.tups);
                 break;
             default: winnerBackground.setBackgroundResource(R.drawable.trophyone);
                 break;
         }
 
+
+    }
+
+    public void callUser() {
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String s = preferences.getString("preferred_contact", "0");
+
+        if (!s.equals(0)){
+            if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
+                Log.d(TAG, "Permission to call user");
+                ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CALL_PHONE}, REQUEST_CALL_PHONE);
+            }
+            else{
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel: " + s));
+                startActivity(intent);
+            }
+        }
 
     }
 }

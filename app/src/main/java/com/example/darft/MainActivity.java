@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
         setBackG();
 
 
-        gameCount.setText("" + myCounter);
+
+        gameCount.setText("EditTextPreference" + myCounter);
         otherCount.setText("" + theirCounter);
         Log.d(TAG, "end of onCreate");
 
